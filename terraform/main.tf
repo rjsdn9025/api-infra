@@ -139,15 +139,3 @@ resource "kubernetes_persistent_volume_claim" "mysql_pvc" {
     volume_name = kubernetes_persistent_volume.mysql_pv.metadata[0].name
   }
 }
-
-resource "kubernetes_config_map" "mysql_init" {
-  metadata {
-    name      = "mysql-initdb-config"
-    namespace = kubernetes_namespace.example.metadata[0].name
-  }
-
-  data = {
-    "init.sql" = file("init.sql")
-  }
-}
-
