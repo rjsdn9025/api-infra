@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "api-server.fullname" . }}
+  labels:
+    app: {{ include "api-server.name" . }}
+    chart: {{ include "api-server.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 3000
+      nodePort: {{ .Values.service.nodePort }}
+  selector:
+    app: {{ include "api-server.name" . }}
+    release: {{ .Release.Name }}
+

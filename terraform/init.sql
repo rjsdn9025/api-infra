@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS testdb;
+
+ALTER USER 'root'@'%' IDENTIFIED WITH caching_sha2_password BY 'P@ssw0rd!2024#';
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
+FLUSH PRIVILEGES;
+
+USE testdb;
+
+CREATE TABLE IF NOT EXISTS items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description TEXT
+);

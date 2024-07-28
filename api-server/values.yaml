@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: rjsdn9025/api-server
+  tag: "6.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 3000
+  nodePort: 30007
+
+env:
+  DB_HOST: mysql
+  DB_USER: root
+  DB_PASSWORD: P@ssw0rd!2024#
+  DB_NAME: testdb
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
