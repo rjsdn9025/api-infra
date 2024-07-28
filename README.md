@@ -1,9 +1,10 @@
 # api-infra
 
 ## 인프라 구성
-![제목 없는 다이어그램 (1)](https://github.com/user-attachments/assets/6fad8d48-6883-4544-b93b-27c073d32c0f)
+![제목 없는 다이어그램 (3)](https://github.com/user-attachments/assets/b0cbf9ae-6ebc-4ad0-96a8-cf1d0a2eb105)
 
-#### 목표
+
+## 목표
 1. Api-server 구현 및 DB CRUD 구현 
    - Nodejs로 API-SERVER 구현 및 도커 이미지 만들기
 2. minikube로 쿠버네티스 환경구성 후 테라폼으로 먼저 배포 
@@ -18,6 +19,7 @@
 ### 인프라 구축 결과
 #### Api-server 구현 및 DB CRUD 구현 (Api-server github링크 참고)
 github 링크 : [Api-server nodejs](https://github.com/rjsdn9025/api-server)
+
 
 #### health Check
 <img width="592" alt="스크린샷 2024-07-28 오후 8 11 19" src="https://github.com/user-attachments/assets/39c68081-eb7d-4e25-99d2-b699f20a3f91">
@@ -64,5 +66,6 @@ github 링크 : [Api-server helm chart](https://github.com/rjsdn9025/api-infra/t
 -> 타겟을 찾지 못함 - 실패!!!!!!!!
 
 #### DB password 보안 문제 해결 - 실패
-<img width="698" alt="스크린샷 2024-07-28 오후 11 40 01" src="https://github.com/user-attachments/assets/8cb47d24-2d0c-4778-813e-603382561022">
+<img width="400" alt="스크린샷 2024-07-28 오후 11 40 01" src="https://github.com/user-attachments/assets/8cb47d24-2d0c-4778-813e-603382561022">
+
 terraform secret service로 DB_Deployment 리소스에 secret 참조하여 테스트 해봤지만 계속 실패;;
