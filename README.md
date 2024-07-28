@@ -11,8 +11,8 @@
    - pv, pvc 서비스 추가로 DB 데이터 보존
 3. Api-server helm chart로 배포 
    - api-server 버전 관리
-4. terraform 과 도커 시크릿 키로 DB password 보안 해결하기 
-6. Prometheus monitoring 환경 구축
+4. Prometheus monitoring 환경 구축
+5. DB pasaword 하드코딩한 부분 보안 문제 해결
 
 
 ### 인프라 구축 결과
@@ -29,7 +29,7 @@ github 링크 : [Api-server nodejs](https://github.com/rjsdn9025/api-server)
 ##### Insert 확인
 <img width="1510" alt="스크린샷 2024-07-28 오후 8 10 59" src="https://github.com/user-attachments/assets/a9a1c38d-4746-4b80-89bd-57a49a7afa48">
 
-#### Update
+#### Update
 <img width="1510" alt="스크린샷 2024-07-28 오후 8 12 45" src="https://github.com/user-attachments/assets/5a58c968-24d9-4fcc-a392-9048fa428b1e">
 
 #### Update 확인
@@ -49,5 +49,20 @@ github 링크 : [Api-server nodejs](https://github.com/rjsdn9025/api-server)
 ![pv,pvc](https://github.com/user-attachments/assets/d9f3fe33-629d-4165-9eec-eeb00f22b0cb)
 
 
+#### Api-server helm chart로 배포
+github 링크 : [Api-server helm chart](https://github.com/rjsdn9025/api-infra/tree/master/api-server)
+
+#### Api-server helm 파일 수정 후 재배포
+<img width="1033" alt="스크린샷 2024-07-28 오후 11 25 54" src="https://github.com/user-attachments/assets/3f676d2a-24a3-4a10-acf0-afd26aca7f08">
 
 
+#### Prometheus monitoring 환경 구축 - 실패
+<img width="1033" alt="스크린샷 2024-07-28 오후 11 25 54" src="https://github.com/user-attachments/assets/72c2fc2c-222a-4711-bffd-45c61890aa44">
+-> 프로메테우스 모니터링 환경을 구축하여 api-server모니터링서비스 생성
+
+<img width="717" alt="스크린샷 2024-07-28 오후 11 36 35" src="https://github.com/user-attachments/assets/ffb8c9aa-b2e1-4c85-bff6-a97231748dff">
+-> 타겟을 찾지 못함 - 실패!!!!!!!!
+
+#### DB password 보안 문제 해결 - 실패
+<img width="698" alt="스크린샷 2024-07-28 오후 11 40 01" src="https://github.com/user-attachments/assets/8cb47d24-2d0c-4778-813e-603382561022">
+terraform secret service로 DB_Deployment 리소스에 secret 참조하여 테스트 해봤지만 계속 실패;;
